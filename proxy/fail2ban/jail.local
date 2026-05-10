@@ -1,0 +1,46 @@
+[DEFAULT]
+# ホワイトリスト設定
+# 127.0.0.1/8 は自分自身（ローカルホスト）
+ignoreip = 127.0.0.1/8 ::1 <YOUR_HOME_IP>
+
+# BANする時間（10分間）
+bantime  = 10m
+
+# 5分間に
+findtime  = 5m
+
+# 5回失敗したらBAN
+maxretry = 5
+
+[sshd]
+enabled = true
+
+# --- Nginx用の設定 ---
+
+[nginx-http-auth]
+enabled = true
+port    = http,https
+logpath = /var/log/nginx/error.log
+
+[nginx-botsearch]
+enabled = true
+port    = http,https
+logpath = /var/log/nginx/access.log
+maxretry = 2
+
+[nginx-badbots]
+enabled = true
+port    = http,https
+logpath = /var/log/nginx/access.log
+maxretry = 2
+
+[nginx-4xx]
+enabled = true
+port    = http,https
+filter  = nginx-4xx
+logpath = /var/log/nginx/access.log
+# 1分間に10回404エラーを出したら
+findtime = 60
+maxretry = 10
+# 1時間BANする
+bantime  = 1h

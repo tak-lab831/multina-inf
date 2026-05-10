@@ -1,0 +1,25 @@
+# --- Python 関連 ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# --- アプリ固有のデータ ---
+# アップロードされたファイル自体は管理外にする
+app/uploads/*
+# ただし .gitkeep だけは例外として管理する（フォルダ構造を維持するため）
+!app/uploads/.gitkeep
+
+# --- インフラ・セキュリティ関連 ---
+# 秘密鍵や環境変数ファイル
+*.pem
+*.key
+.env
+
+# --- OS・エディタ関連 ---
+.DS_Store
+.vscode/
+.idea/
+*~
