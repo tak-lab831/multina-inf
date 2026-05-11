@@ -1,4 +1,24 @@
-　このリポジトリは、セキュリティ重視の設計をテーマに「多層防御（Defense in Depth）」と「プライベート環境の保護」を意識した2層構造インフラ構築案です。
+# AWS Reverse Proxy Architecture
+
+## 構成
+
+- Reverse Proxy Server
+  - Nginx
+  - Tinyproxy
+  - fail2ban
+
+- Application Server
+  - Docker
+  - Gunicorn
+  - Flask
+
+## セキュリティ
+
+- Application Server 非公開化
+- Security Group 制限
+- fail2ban によるアクセス制御
+ 
+ このリポジトリは、セキュリティ重視の設計をテーマに「多層防御（Defense in Depth）」と「プライベート環境の保護」を意識した2層構造インフラ構築案です。
 　
 　インターネットから直接Appサーバーにアクセスさせず、必ずリバースプロキシを経由させることで、バックエンドの安全性を高めています。（コスト面からHTTP運用としていますが、本来ならドメインを取得しSSL/TLS化（HTTPS）を行い、443ポート開放と証明書自動更新機能を導入するのが望ましいと考えています）
 
