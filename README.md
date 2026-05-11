@@ -1,4 +1,4 @@
-# AWS Reverse Proxy Architecture
+# AWS Infrastructure Architecture
 
 このリポジトリは、セキュリティ重視の設計をテーマに「多層防御（Defense in Depth）」と「プライベート環境の保護」を意識した2層構造インフラ構築案です。
 
