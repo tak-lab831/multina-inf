@@ -39,7 +39,7 @@
         <!-- 左側：単独試料 -->
         <div class="col-md-5">
             <div class="card">
-                <div class="card-header">近い値が無い試料 (Alone)</div>
+                <div class="card-header">近い値が無い試料</div>
                 <div class="card-body p-0">
                     <table class="table table-striped mb-0">
                         <thead class="table-dark">
@@ -64,7 +64,7 @@
                     <div class="mb-4 border rounded">
                         <div class="p-2 bg-secondary text-white">グループ: {{ group.names }}</div>
                         <table class="table table-sm mb-0">
-                            <thead><tr><th>ウェル名</th><th>サイズ</th></tr></thead>
+                            <thead><tr><th>ウェル名</th><th>サイズ(bp)/(nt)</th></tr></thead>
                             <tbody>
                                 {% for detail in group.details %}
                                 <tr><td>{{ detail['ウェル名'] }}</td><td>{{ detail['サイズ(bp)/(nt)'] }}</td></tr>
